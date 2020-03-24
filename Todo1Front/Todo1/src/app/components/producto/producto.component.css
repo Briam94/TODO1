@@ -1,0 +1,36 @@
+.card {
+    border: groove;
+    padding: 1rem;
+    margin-top: 30px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    margin-top: 2rem;
+}
+
+.h3, h3 {
+    font-size: 1.75rem;
+    font-family: serif;
+    margin-left: 352px;
+}
+
+#card-tipo-producto {
+    border: groove;
+    padding: 1rem;
+    margin-top: 30px;
+    width: 30rem;
+    margin-left: 19rem;
+}
+
+#tipo-producto{
+    font-size: 1.75rem;
+    font-family: serif;
+    margin-left: 0px;
+}
+
+.botones-actualizar {
+    margin-top: 1rem;
+}

@@ -1,0 +1,99 @@
+<div *ngIf="ventasConsolidado.length <= 0" class="container">
+    <br>
+    <h3>SIN VENTAS REGISTRADAS</h3>
+</div>
+<div *ngIf="ventasConsolidado.length > 0" class="container">
+    <div class="card-group">
+        <div class="card ml-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Reporte general de ventas</h5>
+                <p class="card-text">Este reporte descarga un archivo con extension .cvs con los datos de todas las ventas realizadas.</p>
+                <button type="button" class="btn btn-primary" (click)="reportVentaeGeneral()" >Descargar</button>
+            </div>
+        </div>
+        <div class="card ml-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Reporte detallado de ventas</h5>
+                <p class="card-text">Este reporte descarga un archivo con extension .cvs con los datos de las ventas a detalle realizadas.</p>
+                <button type="button" class="btn btn-primary" (click)="reporteVentaDetallado()" >Descargar</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-group">
+        <div class="card ml-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Reporte de productos</h5>
+                <p class="card-text">Este reporte descarga un archivo con extension .cvs con los datos de todos los productos registrados con fecha de registro y modificación.</p>
+                <button type="button" class="btn btn-primary" (click)="reporteProductos()" >Descargar</button>
+            </div>
+        </div>
+        <div class="card ml-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Reporte de tipo de producto</h5>
+                <p class="card-text">Este reporte descarga un archivo con extension .cvs con los datos de los tipos de productos existentes y la fecha de creacion de cada uno.</p>
+                <button type="button" class="btn btn-primary" (click)="reporteTipoProducto()" >Descargar</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="ventasConsolidado.length == 0">
+        <h3>Sin ventas registradas</h3>
+    </div>
+    <div *ngIf="ventasConsolidado.length > 0" class="container">
+        <table class="table table-bordered" *ngIf="!descripcion">
+            <thead>
+              <tr>
+                <th scope="col">Fecha compra</th>
+                <th scope="col">Documento cliente</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dato of ventasConsolidado">
+                <th>{{dato.venta.fechaVenta}}</th>
+                <td>{{dato.venta.documento}}</td>
+                <td>{{dato.venta.cantidadTotalProductos}}</td>
+                <td>{{dato.venta.totalPagar | currency:'$':false}}</td>
+                <td>
+                    <button type="button" class="btn btn-success" title="Ver detalle de la venta." (click)="verDetalle(dato)">Ver detalle <i class="fas fa-info-circle"></i></button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="descripcion" class="card">
+            <div class="card-body">
+                <div id="close">
+                    <button type="button" class="btn btn-danger" (click)="descripcion = !descripcion" title="Cerrar detalle"><i class="fas fa-window-close"></i></button>
+                </div>
+                <h5 class="card-title">Detalle de compra</h5>
+                <p class="card-text">
+                    <span id="bold">Fecha compra: </span> {{descripcionCompra.venta.fechaVenta}}
+                    <span id="bold">Documento cliente: </span> {{descripcionCompra.venta.documento}} <br>
+                    <span id="bold">Productos:</span> <br> 
+                </p>
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Precio unitario</th>
+                          <th scope="col">Precio total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let dato of descripcionCompra.venta.productos">
+                          <th>{{dato.nombre}}</th>
+                          <td>{{dato.cantidad}}</td>
+                          <td>{{dato.precio | currency:'$':false}}</td>
+                          <td>{{dato.cantidad * dato.precio}}</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  <span id="bold">Cantidad total de productos: </span> {{descripcionCompra.venta.cantidadTotalProductos}}  
+                  <span id="bold">Total a pagar: </span> {{descripcionCompra.venta.totalPagar | currency:'$':false}}
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.card{
+    margin: 1rem;
+}
+
+#fechaForm {
+    width: 220px;
+}
+
+#bold{
+    color:blue;
+    font-weight:bold
+}
+
+#close{
+    text-align: right;
+}

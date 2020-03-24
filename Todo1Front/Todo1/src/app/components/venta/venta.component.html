@@ -1,0 +1,53 @@
+<div *ngIf="productos.length > 0; else elseBlock" class="container">
+    <div>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" (click)="verCarritoCompras = !verCarritoCompras" id="carrito">
+            <i class="fas fa-shopping-cart"></i> {{carritoCompras.length}}
+        </button>
+        <div *ngIf="verCarritoCompras && carritoCompras.length > 0" class="card card-body">
+            <label for="inputEmail4">Numero de documento de identificacion del cliente</label>
+            <input [(ngModel)]="documento" name="documento" type="text" class="form-control" id="inputEmail4">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio unitario</th>
+                    <th scope="col">Accion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dato of carritoCompras" >
+                    <td>{{dato.productoNombre}}</td>
+                    <td>{{dato.productoCantidad}}</td>
+                    <td>{{dato.productoPrecio}}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="eliminarCarrito(dato)"><i class="fas fa-minus-circle"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <label for="inputEmail4">Total a pagar: {{total}}</label>
+              <button type="button" class="btn btn-success" (click)="finalizarVenta()" id="vender" >Finalizar venta</button>
+        </div>
+        <div *ngIf="verCarritoCompras && carritoCompras.length <= 0" class="card card-body">
+            Sin productos.
+        </div>
+    </div>
+    <div *ngIf="!verCarritoCompras" class="card-group">
+        <div *ngFor="let dato of productos; let i = index" class="card ml-2" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{dato.productoNombre}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{dato.productoPrecio | currency:'$':false}}</h6>
+              <p class="card-text">{{dato.productoTipoProducto.tipoProducto}}.</p>
+              <p class="card-text" *ngIf="dato.productoCantidad <= 0">
+                  Producto sin stock
+              </p>
+              <button *ngIf="dato.productoCantidad > 0" class="btn btn-link" (click)="agregarAlCarrito(dato)" >Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <ng-template #elseBlock> <h3>Sin productos registrados para la venta</h3>  </ng-template>
+</div>

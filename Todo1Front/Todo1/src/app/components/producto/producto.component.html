@@ -1,0 +1,103 @@
+<div class="container">
+    
+    <div *ngIf="nuevoTipoProducto" class="card" id="card-tipo-producto">
+        <div class="card-body">
+            <h3 id="tipo-producto">Formulario nuevo tipo de producto</h3>
+            <form class="formulario_producto">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Nombre tipo producto</label>
+                    <input [(ngModel)]="nombreTipoProducto" name="nombreTipoProducto" type="text" class="form-control" id="inputEmail4">
+                  </div>
+                </div>
+                <button class="btn btn-primary mr-4" title="Actualizar producto seleccionado" (click)="crearTipoProducto()" >Crear</button>
+                <button type="submit" class="btn btn-secondary ml-4" title="Cancelar edición" (click)="cancelarTipoProducto()" >Cancelar</button>
+            </form>
+        </div>
+    </div>
+    <div  *ngIf="nuevoTipoProducto == false" class="card">
+        <div class="card-body">
+            <h3>Formulario nuevo producto</h3>
+            <form class="formulario_producto">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Nombre</label>
+                    <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" id="inputEmail4">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Cantidad</label>
+                    <input [(ngModel)]="cantidad" name="cantidad"  (keypress)="serviciosGenerales.validarCaracter($event, 'NUM')" class="form-control" id="inputPassword4">
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Tipo de producto</label>
+                      <select  [(ngModel)]="tipoProducto" name="tipoProducto" id="inputState" class="form-control" >
+                        <option value="0" selected>-- SELECCIONE --</option>
+                        <option *ngFor="let dato of tipoProductos; let i = index"  value="{{dato.tipoProductoId}}" >{{dato.tipoProducto}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Precio</label>
+                      <input [(ngModel)]="precio" name="precio" type="text" (keypress)="serviciosGenerales.validarCaracter($event, 'NUM')" class="form-control" >
+                    </div>
+                </div>
+                <button class="btn btn-primary mr-4" title="Agregar nuevo producto" (click)="guardar()" >Agregar</button>
+                <button class="btn btn-secondary ml-4 mr-4" title="Limpiar todos los campos del formulario" (click)="limpiar()" >Limpiar</button>
+                <button type="button" class="btn btn-success ml-4" (click)="iniciarCrearTipoProducto()">Nuevo tipo producto</button>
+              </form>
+        </div>
+    </div>
+
+      <div class="container">
+        <table *ngIf="listaProductos.length > 0 && editar == false; else elseBlock" class="table table-striped" id="tabla_lista">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad en stock</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dato of listaProductos" >
+                <td>{{dato.productoNombre}}</td>
+                <td>{{dato.productoCantidad}}</td>
+                <td>{{dato.productoPrecio}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" (click)="iniciarEditar(dato)" >Actualizar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="container">
+            <ng-template #elseBlock> <h3>Sin productos registrados</h3>  </ng-template>
+          </div>
+      </div>
+
+      <div *ngIf="editar" class="card">
+        <div class="card-body">
+            <h3>Formulario de actualizacion</h3>
+            <form class="formulario_producto">
+                <div class="form-row">
+                  <div class="col">
+                    <label for="inputEmail4">Nombre</label>
+                    <input [(ngModel)]="nombreEditar" name="nombreEditar" type="text" class="form-control" id="inputEmail4" disabled>
+                  </div>
+                  <div class="col">
+                    <label for="inputPassword4">Cantidad en stock</label>
+                    <input [(ngModel)]="cantidadEditar" name="cantidadEditar"  (keypress)="serviciosGenerales.validarCaracter($event, 'NUM')" class="form-control" id="inputPassword4" >
+                  </div>
+                  <div class="col">
+                    <label for="inputPassword4">Precio</label>
+                    <input [(ngModel)]="precioEditar" name="precioEditar" type="text" (keypress)="serviciosGenerales.validarCaracter($event, 'NUM')" class="form-control" disabled >
+                  </div>
+                </div>
+                <div class="botones-actualizar">
+                    <button class="btn btn-primary mr-4" title="Actualizar producto seleccionado" (click)="actualizar()" >Actualizar</button>
+                    <button class="btn btn-secondary ml-4" title="Cancelar edición" (click)="cancelar()" >Cancelar</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+2020-03-24 10:21:40,373 INFO  [main] com.example.demo.CidenetApplication : Starting CidenetApplication on DESKTOP-4Q1Q94G with PID 5852 (started by Brian Zambrano in C:\Users\Brian Zambrano\eclipse-workspace\cidenet)
+2020-03-24 10:21:40,380 INFO  [main] com.example.demo.CidenetApplication : No active profile set, falling back to default profiles: default
+2020-03-24 10:21:41,159 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-24 10:21:41,185 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 JPA repository interfaces.
+2020-03-24 10:21:41,660 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8090 (http)
+2020-03-24 10:21:41,670 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2020-03-24 10:21:41,670 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-24 10:21:41,775 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2020-03-24 10:21:42,471 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2020-03-24 10:21:42,578 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2020-03-24 10:21:43,466 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-24 10:21:43,692 INFO  [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-24 10:21:43,903 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8090 (http) with context path ''
+2020-03-24 10:21:43,906 INFO  [main] com.example.demo.CidenetApplication : Started CidenetApplication in 3.955 seconds (JVM running for 4.678)
+2020-03-24 10:25:21,816 INFO  [http-nio-8090-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-24 14:33:21,974 INFO  [RMI TCP Connection(11)-127.0.0.1] org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-03-24 14:33:22,022 INFO  [RMI TCP Connection(11)-127.0.0.1] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-24 14:33:22,025 INFO  [RMI TCP Connection(11)-127.0.0.1] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-24 14:33:22,045 INFO  [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2020-03-24 14:33:22,054 INFO  [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2020-03-24 14:33:26,742 INFO  [main] com.example.demo.CidenetApplication : Starting CidenetApplication on DESKTOP-4Q1Q94G with PID 16916 (started by Brian Zambrano in C:\Users\Brian Zambrano\eclipse-workspace\cidenet)
+2020-03-24 14:33:26,745 INFO  [main] com.example.demo.CidenetApplication : No active profile set, falling back to default profiles: default
+2020-03-24 14:33:27,384 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-24 14:33:27,405 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12ms. Found 0 JPA repository interfaces.
+2020-03-24 14:33:27,906 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8090 (http)
+2020-03-24 14:33:27,916 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2020-03-24 14:33:27,916 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-24 14:33:28,051 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2020-03-24 14:33:28,643 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2020-03-24 14:33:28,775 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2020-03-24 14:33:29,773 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-24 14:33:30,127 INFO  [main] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-24 14:33:30,419 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8090 (http) with context path ''
+2020-03-24 14:33:30,425 INFO  [main] com.example.demo.CidenetApplication : Started CidenetApplication in 4.052 seconds (JVM running for 4.774)
+2020-03-24 14:33:39,959 INFO  [http-nio-8090-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
